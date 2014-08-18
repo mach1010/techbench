@@ -1,33 +1,25 @@
-h1 Listing customers
+h1 Customer List
+
+= form_tag customers_path, method: 'get' do
+  p
+    = text_field_tag :search, params[:search]
+    = submit_tag "Search", name: nil
 
 table
   thead
     tr
-      th First Name
-      th Last Name
+      th Name
       th Phone
       th Alt Phone
-      th Address
-      th Bldg/Apt/Number
-      th City
-      th State
-      th Zip
-      th Company?
       th Company Name
 
   tbody
     - @customers.each do |customer|
       tr
-        td = customer.fname
-        td = customer.lname
+        td 
+          strong = link_to "#{customer.lname}, #{customer.fname}", customer
         td = customer.phone1
         td = customer.phone2
-        td = customer.address1
-        td = customer.address2
-        td = customer.city
-        td = customer.state
-        td = customer.zip
-        td = customer.company
         td = customer.company_name
         td = link_to 'Show', customer
         td = link_to 'Edit', edit_customer_path(customer)
