@@ -4,6 +4,9 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  width: 960px;
+  margin: auto;
+  padding: 20px;
 }
 
 p, ol, ul, td {
@@ -12,6 +15,9 @@ p, ol, ul, td {
   line-height: 18px;
 }
 
+td, th {
+  padding-right: 40px;
+}
 pre {
   background-color: #eee;
   padding: 10px;

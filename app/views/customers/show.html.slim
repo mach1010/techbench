@@ -1,6 +1,41 @@
-p#notice = notice
 
+h1 = @customer.fname + " " + @customer.lname 
+
+fieldset
+  legend Details
+  strong Phone: 
+  = @customer.phone1
+  br
+  strong Alt Phone: 
+  = @customer.phone2
+  br
+  strong Address: 
+  = @customer.address1
+  br
+  strong Apt/Bldg/Number: 
+  = @customer.address2
+  br
+  strong City: 
+  = @customer.city
+  br
+  strong State: 
+  = @customer.state
+  br
+  strong Zip: 
+  = @customer.zip
+  br
+  - if @customer.company
+    strong Company Name 
+    = @customer.company_name
+    br
+  strong Notes: 
+  = @customer.notes
 
 = link_to 'Edit', edit_customer_path(@customer)
-'|
+' | 
 = link_to 'Back', customers_path
+' | 
+= link_to 'Delete', @customer, data: {confirm: "are you sure?"}, method: 'delete'
+
+h2 
+
